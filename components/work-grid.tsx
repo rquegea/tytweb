@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useMemo, useState, useEffect } from "react"
-import { projectsData, type ProjectCategory } from "@/lib/projects"
+import { projectsData, slugify, type ProjectCategory } from "@/lib/projects"
 import { useScrollReveal } from "@/components/utils/scroll-reveal"
 
 type Filter = "all" | ProjectCategory
@@ -106,7 +106,7 @@ export function WorkGrid() {
       {/* Grid 3 columnas, cards 1:1 con overlay izquierda: cliente, derecha: categoría */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mt-12">
         {filtered.map((p, i) => {
-          const href = `/work/${slugify(p.title)}`
+          const href = `/projects/${encodeURIComponent(p.category)}/${slugify(p.title)}`
           const clientBase = guessClient(p.title)
           const client = CLIENT_OVERRIDES[p.id] ?? clientBase
           const displayTitle = TITLE_OVERRIDES[p.id] ?? p.title

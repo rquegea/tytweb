@@ -59,7 +59,7 @@ export function HeroSection() {
       onMouseMove={handleMove}
       className="relative overflow-hidden min-h-screen flex items-center justify-center bg-white"
     >
-      <h1 className="text-balance text-4xl md:text-6xl font-bold text-[#0F0E0E]">
+      <h1 className="sr-only">
         Agencia de marketing en Madrid orientada a resultados
       </h1>
       <Image

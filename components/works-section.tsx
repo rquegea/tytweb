@@ -1,8 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
-import { LazyVideo } from "@/components/ui/lazy-video"
 import { useEffect, useRef } from "react"
 import { projectsData, slugify } from "@/lib/projects"
 export function WorksSection() {
@@ -70,14 +68,14 @@ export function WorksSection() {
   return (
     <section id="works" className="py-24 bg-white">
       <div ref={containerRef} className="site-container">
-        <h2 className="heading-2 mb-16">Proyectos destacados</h2>
+        <h2 className="heading-2 mb-16">Works</h2>
 
         {/* First row - 50%, 25%, 25% */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-6 lg:mb-12">
           {row1.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = `/work/${slug}`
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/projects"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>
@@ -86,10 +84,9 @@ export function WorksSection() {
                     const isLotus = match && match.id === "lotus-teambuilding"
                     if (isLotus) {
                       return (
-                        <LazyVideo
+                        <video
                           src="/videos/lotus-loop.mp4"
                           className="w-full h-full object-cover rounded-inherit"
-                          placeholderPoster="/placeholder.jpg"
                           autoPlay
                           muted
                           loop
@@ -101,12 +98,10 @@ export function WorksSection() {
                     const isPS = !!(match && match.id === "ps-days-of-play")
                     const src = isPS ? "/projects/t&trade/ps-days-of-play-01.1.jpg" : base
                     return (
-                      <Image
+                      <img
                         src={src}
                         alt={project.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
                       />
                     )
                   })()}
@@ -123,7 +118,7 @@ export function WorksSection() {
           {row2.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = `/work/${slug}`
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/projects"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>
@@ -133,12 +128,10 @@ export function WorksSection() {
                     const isPS = !!(match && match.id === "ps-days-of-play")
                     const src = isPS ? "/projects/t&trade/ps-days-of-play-01.1.jpg" : base
                     return (
-                      <Image
+                      <img
                         src={src}
                         alt={project.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
                       />
                     )
                   })()}
@@ -154,7 +147,7 @@ export function WorksSection() {
           {row3.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = `/work/${slug}`
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/projects"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>
@@ -164,12 +157,10 @@ export function WorksSection() {
                     const isPS = !!(match && match.id === "ps-days-of-play")
                     const src = isPS ? "/projects/t&trade/ps-days-of-play-01.1.jpg" : base
                     return (
-                      <Image
+                      <img
                         src={src}
                         alt={project.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
                       />
                     )
                   })()}
@@ -185,7 +176,7 @@ export function WorksSection() {
           {row4.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = `/work/${slug}`
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/projects"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>
@@ -195,12 +186,10 @@ export function WorksSection() {
                     const isPS = !!(match && match.id === "ps-days-of-play")
                     const src = isPS ? "/projects/t&trade/ps-days-of-play-01.1.jpg" : base
                     return (
-                      <Image
+                      <img
                         src={src}
                         alt={project.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-95 rounded-inherit"
                       />
                     )
                   })()}

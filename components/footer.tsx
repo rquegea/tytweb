@@ -1,4 +1,3 @@
-import Image from "next/image"
 export function Footer() {
   return (
     <footer className="bg-white">
@@ -66,10 +65,10 @@ export function Footer() {
       <div className="border-t border-neutral-200/50">
         <div className="site-container py-8">
           <div className="flex flex-wrap items-center justify-center gap-8 opacity-80">
-            <Image src="/partners/cofinanciadoue.png" alt="Cofinanciado por la UE" loading="lazy" width={160} height={32} className="h-8 w-auto" />
-            <Image src="/partners/fondoseuropeos.png" alt="Fondos Europeos" loading="lazy" width={160} height={32} className="h-8 w-auto" />
-            <Image src="/partners/ministeriodetrabajo.png" alt="Ministerio de Trabajo" loading="lazy" width={160} height={32} className="h-8 w-auto" />
-            <Image src="/partners/SEPE_Horizontal_Positivo_cas.jpg" alt="SEPE" loading="lazy" width={160} height={32} className="h-8 w-auto" />
+            <img src="/partners/cofinanciadoue.png" alt="Cofinanciado por la UE" className="h-8 w-auto" />
+            <img src="/partners/fondoseuropeos.png" alt="Fondos Europeos" className="h-8 w-auto" />
+            <img src="/partners/ministeriodetrabajo.png" alt="Ministerio de Trabajo" className="h-8 w-auto" />
+            <img src="/partners/SEPE_Horizontal_Positivo_cas.jpg" alt="SEPE" className="h-8 w-auto" />
           </div>
         </div>
       </div>

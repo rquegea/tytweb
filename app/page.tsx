@@ -1,4 +1,3 @@
-"use client"
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
@@ -6,7 +5,7 @@ import { WorksSection } from "@/components/works-section"
 import { AboutSection } from "@/components/about-section"
 import { ContactsSection } from "@/components/contacts-section"
 import { Footer } from "@/components/footer"
-import { useScrollReveal } from "@/components/utils/scroll-reveal"
+import { ScrollRevealInit } from "@/components/utils/scroll-reveal"
 
 const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trucoytrufa.es"
 
@@ -35,11 +34,11 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  useScrollReveal()
   return (
     <div className="min-h-screen">
       <Header />
       <main>
+        <ScrollRevealInit />
         <div className="scroll-fade-in"><HeroSection /></div>
         <div className="scroll-fade-in"><WorksSection /></div>
         <div className="scroll-fade-in"><AboutSection /></div>
