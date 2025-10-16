@@ -26,7 +26,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className="py-24">
             <div className="max-w-[1800px] mx-auto px-12 md:px-12">
               <p className="opacity-70">Proyecto no encontrado.</p>
-              <div className="mt-6"><Link href="/projects" className="underline">Volver</Link></div>
+              <div className="mt-6"><Link href="/work" className="underline">Volver</Link></div>
             </div>
           </div>
         </main>
@@ -37,7 +37,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* inicializa intersection observer en el cliente sin marcar la página completa como client */}
       {/* @ts-expect-error Server Component wrapping a client component for side-effect */}
       <ScrollRevealInit />
       <Header />
@@ -192,7 +191,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </>
             )}
 
-            <div className="mt-16 scroll-fade-in">
+            <div className="sr-only">
               <Link href={`/projects/${encodeURIComponent(project.category)}`} className="underline">Más en esta categoría</Link>
             </div>
           </div>

@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { PageTransition } from "@/components/page-transition"
-import { Preloader } from "@/components/preloader"
 import "./globals.css"
 
 const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trucoytrufa.es"
@@ -82,7 +81,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <Preloader />
         <PageTransition>
           <Suspense fallback={null}>{children}</Suspense>
         </PageTransition>

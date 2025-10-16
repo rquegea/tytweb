@@ -24,33 +24,26 @@ export default async function ProjectsCategoryPage({ params }: PageProps) {
       <main className="pt-20">
         <div className="py-24">
           <div className="site-container">
-            <div className="max-w-4xl scroll-fade-in">
+            <div className="sr-only">
               <h1 className="heading-2 text-[#0F0E0E]">Categoría: {decodeURIComponent(category)}</h1>
             </div>
 
-            {projects.length === 0 ? (
-              <p className="opacity-70 mt-8 scroll-fade-in">No hay proyectos en esta categoría.</p>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 scroll-fade-in">
-                {projects.map((p) => (
-                  <Link
-                    key={p.id}
-                    href={`/projects/${encodeURIComponent(p.category)}/${encodeURIComponent(p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, ""))}`}
-                    className="group border border-neutral-200 rounded-lg overflow-hidden"
-                  >
-                    <div className="relative h-48 bg-muted">
-                      <img src={p.coverImage} alt={p.title} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="p-4">
+            <div className="sr-only">
+              {projects.length === 0 ? (
+                <p className="opacity-70 mt-8">No hay proyectos en esta categoría.</p>
+              ) : (
+                <div>
+                  {projects.map((p) => (
+                    <div key={p.id}>
                       <div className="text-xs uppercase tracking-wide opacity-70">{p.category}</div>
                       <div className="font-medium mt-1">{p.title}</div>
                     </div>
-                  </Link>
-                ))}
-              </div>
-            )}
+                  ))}
+                </div>
+              )}
+            </div>
 
-            <div className="mt-12">
+            <div className="sr-only">
               <Link href="/projects" className="underline">Volver a proyectos</Link>
             </div>
           </div>
