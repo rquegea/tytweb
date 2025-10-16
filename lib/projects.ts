@@ -13,6 +13,7 @@ export interface ProjectMeta {
   coverImage: string // path under public/
   images?: string[]
   action?: string
+  updatedAt?: string // ISO date
 }
 
 export const CATEGORIES: ProjectCategory[] = [
@@ -56,6 +57,7 @@ export const projectsData: ProjectMeta[] = [
       "/projects/t&trade/moet-escaparate-05.jpg",
       "/projects/t&trade/moet-escaparate-06.jpg",
     ],
+    updatedAt: "2025-01-10",
   },
   {
     id: "lotus-teambuilding",
@@ -72,6 +74,7 @@ export const projectsData: ProjectMeta[] = [
       "/projects/t&events/lotus-campana-04.jpg",
       "/projects/t&events/lotus-campana-05.jpg",
     ],
+    updatedAt: "2025-01-08",
   },
   {
     id: "roc-digital-campaigns",
@@ -88,6 +91,7 @@ export const projectsData: ProjectMeta[] = [
       "/projects/t&tech/roc-campana-04.jpg",
       "/projects/t&tech/roc-campana-05.jpg",
     ],
+    updatedAt: "2025-01-05",
   },
   {
     id: "pancracio-chocolates",

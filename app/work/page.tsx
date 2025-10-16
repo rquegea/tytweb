@@ -5,6 +5,32 @@ import { Footer } from "@/components/footer"
 import { WorkGrid } from "@/components/work-grid"
 import { useScrollReveal } from "@/components/utils/scroll-reveal"
 
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trucoytrufa.es"
+
+export const metadata: Metadata = {
+  title: "Proyectos · Agencia de marketing en Madrid",
+  description:
+    "Casos de éxito en trade marketing, activaciones, eventos y social realizados por Truco y Trufa.",
+  alternates: { canonical: `${base}/work` },
+  openGraph: {
+    type: "website",
+    url: `${base}/work`,
+    title: "Proyectos · Agencia de marketing en Madrid",
+    description:
+      "Casos de éxito en trade marketing, activaciones, eventos y social.",
+    images: [
+      { url: `${base}/placeholder.jpg`, width: 1200, height: 630, alt: "Proyectos Truco y Trufa" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Proyectos · Agencia de marketing en Madrid",
+    description:
+      "Casos de éxito en trade marketing, activaciones, eventos y social.",
+    images: [`${base}/placeholder.jpg`],
+  },
+}
+
 export const metadata: Metadata = {
   title: "Work",
 }

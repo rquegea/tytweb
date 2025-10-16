@@ -59,7 +59,9 @@ export function HeroSection() {
       onMouseMove={handleMove}
       className="relative overflow-hidden min-h-screen flex items-center justify-center bg-white"
     >
-      <h1 className="sr-only">Agencia de marketing en Madrid para gran consumo — Truco y Trufa</h1>
+      <h1 className="text-balance text-4xl md:text-6xl font-bold text-[#0F0E0E]">
+        Agencia de marketing en Madrid orientada a resultados
+      </h1>
       <Image
         src="/logotytweb.png"
         alt="Truco y Trufa, agencia de marketing en Madrid"

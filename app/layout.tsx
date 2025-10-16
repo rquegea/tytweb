@@ -5,12 +5,13 @@ import { Suspense } from "react"
 import { PageTransition } from "@/components/page-transition"
 import "./globals.css"
 
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trucoytrufa.es"
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com"),
+  metadataBase: new URL(base),
   title: { default: "Truco y Trufa — agencia de marketing en Madrid", template: "%s | Truco y Trufa" },
   description: "Agencia de marketing en Madrid especializada en gran consumo: trade, eventos y social.",
   generator: "v0.app",
-  alternates: { canonical: "/" },
   icons: {
     icon: "/logotytweb1.png",
     shortcut: "/logotytweb1.png",
@@ -26,15 +27,17 @@ export default function RootLayout({
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Truco & Trufa",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
-    logo: "/logotytweb.png",
-    sameAs: ["https://instagram.com", "https://linkedin.com"],
+    name: "Truco y Trufa",
+    url: base,
+    logo: `${base}/logotytweb.png`,
+    sameAs: [
+      "https://www.instagram.com/",
+      "https://www.linkedin.com/",
+    ],
     siteNavigationElement: [
-      { "@type": "SiteNavigationElement", name: "Work", url: "/work" },
-      { "@type": "SiteNavigationElement", name: "Projects", url: "/projects" },
-      { "@type": "SiteNavigationElement", name: "About", url: "/about" },
-      { "@type": "SiteNavigationElement", name: "Contact", url: "/contact" },
+      { "@type": "SiteNavigationElement", name: "Work", url: `${base}/work` },
+      { "@type": "SiteNavigationElement", name: "About", url: `${base}/about` },
+      { "@type": "SiteNavigationElement", name: "Contact", url: `${base}/contact` },
     ],
   }
 
@@ -42,10 +45,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Truco y Trufa S.L.",
-    image: "https://turbologo.com/es/crear-logo",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
-    logo: "https://turbologo.com/es/crear-logo",
-    telephone: "+34 000 000 000",
+    image: `${base}/logotytweb.png`,
+    url: base,
+    logo: `${base}/logotytweb.png`,
+    telephone: "+34 910000000",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Calle San Gerardo 4",
@@ -69,7 +72,10 @@ export default function RootLayout({
       "Diseño gráfico",
       "Gestión de redes sociales",
     ],
-    sameAs: ["https://instagram.com", "https://linkedin.com"],
+    sameAs: [
+      "https://www.instagram.com/",
+      "https://www.linkedin.com/",
+    ],
   }
 
   return (
