@@ -25,3 +25,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# assets pesados / imágenes
+public/projects/
+public/videos/
+public/partners/
+public/placeholder-*.{png,jpg,jpeg,webp,avif}
+public/*.mp4

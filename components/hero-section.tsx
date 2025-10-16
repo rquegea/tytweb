@@ -1,6 +1,7 @@
 "use client"
 
 import { useCallback, useMemo, useRef, useState } from "react"
+import Image from "next/image"
 import { projectsData } from "@/lib/projects"
 
 interface Splash {
@@ -58,7 +59,15 @@ export function HeroSection() {
       onMouseMove={handleMove}
       className="relative overflow-hidden min-h-screen flex items-center justify-center bg-white"
     >
-      <img src="/logotytweb.png" alt="TYT" className="w-[min(60vw,480px)] h-auto opacity-90 relative z-0" />
+      <h1 className="sr-only">Agencia de marketing en Madrid para gran consumo — Truco y Trufa</h1>
+      <Image
+        src="/logotytweb.png"
+        alt="Truco y Trufa, agencia de marketing en Madrid"
+        width={480}
+        height={200}
+        priority
+        className="w-[min(60vw,480px)] h-auto opacity-90 relative z-0"
+      />
       <div className="pointer-events-none absolute inset-0 z-10">
         {splashes.map((s) => (
           <img

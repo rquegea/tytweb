@@ -1,8 +1,13 @@
 "use client"
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WorkGrid } from "@/components/work-grid"
 import { useScrollReveal } from "@/components/utils/scroll-reveal"
+
+export const metadata: Metadata = {
+  title: "Work",
+}
 
 export default function WorkPage() {
   // Activar aparición gradual al hacer scroll

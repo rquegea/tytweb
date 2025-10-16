@@ -74,7 +74,7 @@ export function Header() {
               </li>
               <li>
                 <Link
-                  href="/#about"
+                  href="/about"
                   className="text-xs font-medium text-[#0F0E0E] hover:opacity-70 transition-opacity uppercase tracking-wide"
                 >
                   ABOUT
@@ -82,7 +82,7 @@ export function Header() {
               </li>
               <li>
                 <Link
-                  href="/#contacts"
+                  href="/contact"
                   className="text-xs font-medium text-[#0F0E0E] hover:opacity-70 transition-opacity uppercase tracking-wide"
                 >
                   CONTACT

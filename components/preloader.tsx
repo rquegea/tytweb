@@ -24,7 +24,7 @@ export function Preloader() {
     <div className="preloader visible">
       <div className={`preloader__panel ${stage}`} />
       <div className={`preloader__logo ${stage}`}>
-        <img src="/logotytweb.png" alt="TYT" className="preloader__logo-img" />
+        <img src="/logotytweb.png" alt="Truco y Trufa, agencia de marketing en Madrid" className="preloader__logo-img" />
       </div>
     </div>
   )
