@@ -75,7 +75,7 @@ export function WorksSection() {
           {row1.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = match ? `/work/${slug}` : "/work"
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/work"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>
@@ -118,7 +118,7 @@ export function WorksSection() {
           {row2.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = match ? `/work/${slug}` : "/work"
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/work"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>
@@ -147,7 +147,7 @@ export function WorksSection() {
           {row3.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = match ? `/work/${slug}` : "/work"
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/work"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>
@@ -176,7 +176,7 @@ export function WorksSection() {
           {row4.map((project) => {
             const slug = slugify(project.title)
             const match = projectsData.find((p) => slugify(p.title) === slug)
-            const href = match ? `/work/${slug}` : "/work"
+            const href = match ? `/projects/${encodeURIComponent(match.category)}/${slug}` : "/work"
             const displayTitle = match ? (HOME_TITLE_OVERRIDES[match.id] ?? match.title) : project.title
             return (
               <Link key={project.id} href={href} className={`group cursor-pointer ${project.span}`}>

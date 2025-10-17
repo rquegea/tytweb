@@ -30,7 +30,7 @@ export function HeroSection() {
     if (!containerRef.current || allImages.length === 0) return
     const now = Date.now()
     // throttling: una imagen cada ~180ms
-    if (now - lastSpawnMs.current < 110) return
+    if (now - lastSpawnMs.current < 140) return
     lastSpawnMs.current = now
     const rect = containerRef.current.getBoundingClientRect()
     const x = e.clientX - rect.left
@@ -42,7 +42,7 @@ export function HeroSection() {
     const splash: Splash = { id, src, x, y, size, rot }
     setSplashes((prev) => {
       const next = [...prev, splash]
-      return next.slice(-12) // máximo 12 elementos simultáneos
+      return next.slice(-6) // máximo 12 elementos simultáneos
     })
     // auto-remoción
     globalThis.setTimeout(() => {

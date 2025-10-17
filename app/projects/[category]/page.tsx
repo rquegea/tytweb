@@ -25,7 +25,7 @@ export default async function ProjectsCategoryPage({ params }: PageProps) {
         <div className="py-24">
           <div className="site-container">
             <div className="sr-only">
-              <h1 className="heading-2 text-[#0F0E0E]">Categoría: {decodeURIComponent(category)}</h1>
+              <h1 className="heading-2 text-[#0F0E0E]">Categoría: {decodeURIComponent(rawCategory)}</h1>
             </div>
 
             <div className="sr-only">
