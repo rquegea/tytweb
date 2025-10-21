@@ -72,7 +72,14 @@ export function Header() {
                   WORK
                 </Link>
               </li>
-              {/* Projects eliminado */}
+              <li>
+                <Link
+                  href="/news"
+                  className="text-xs font-medium text-[#0F0E0E] hover:opacity-70 transition-opacity uppercase tracking-wide"
+                >
+                  NEWS
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/about"

@@ -1,21 +1,73 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { findProjectBySlug, getAllProjectParams } from "@/lib/projects"
 import { ScrollRevealInit } from "@/components/utils/scroll-reveal"
 
 interface PageProps {
-  params: { category: string; slug: string }
+  params: Promise<{ category: string; slug: string }>
 }
 
-export function generateStaticParams() {
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trucoytrufa.es"
+
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
+export async function generateStaticParams() {
   return getAllProjectParams()
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params
+  const category = decodeURIComponent(resolvedParams.category)
+  const slug = decodeURIComponent(resolvedParams.slug)
+  const project = findProjectBySlug(category, slug)
+
+  if (!project) {
+    return {
+      title: "Proyecto no encontrado",
+      robots: { index: false, follow: false },
+    }
+  }
+
+  const description = project.subtitle 
+    ? project.subtitle.substring(0, 160) 
+    : `Proyecto de ${project.category} para ${guessClient(project.title)}`
+  
+  const ogImage = `${base}${project.coverImage}`
+
+  return {
+    title: `${project.title} · Proyecto`,
+    description,
+    alternates: { 
+      canonical: `${base}/projects/${encodeURIComponent(project.category)}/${encodeURIComponent(slug)}` 
+    },
+    openGraph: {
+      type: "article",
+      url: `${base}/projects/${encodeURIComponent(project.category)}/${encodeURIComponent(slug)}`,
+      title: `${project.title} · Truco y Trufa`,
+      description,
+      images: [{ 
+        url: ogImage, 
+        width: 1200, 
+        height: 630,
+        alt: project.title 
+      }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} · Truco y Trufa`,
+      description,
+      images: [ogImage],
+    },
+  }
+}
+
 export default async function ProjectDetailPage({ params }: PageProps) {
-  const { category: rawCategory, slug: rawSlug } = await params
-  const category = decodeURIComponent(rawCategory)
-  const slug = decodeURIComponent(rawSlug)
+  const resolvedParams = await params
+  const category = decodeURIComponent(resolvedParams.category)
+  const slug = decodeURIComponent(resolvedParams.slug)
   const project = findProjectBySlug(category, slug)
 
   if (!project) {
@@ -154,10 +206,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 </div>
                 {/* No más imágenes debajo */}
               </>
-            ) : project.id === "kelloggs-online-events" ? (
-              <>
-                {/* Kellogg's: no imágenes adicionales debajo del texto */}
-              </>
             ) : (
               <>
                 {/* Resto: Segunda imagen a 100% (images[1]) */}
@@ -250,13 +298,13 @@ function mapIndustry(cat: string): string {
 }
 
 function defaultOverview(title: string): string {
-  return `This project, ${title}, showcases a focused approach to brand and product experience, aligning design, storytelling and utility to create measurable impact.`
+  return `Este proyecto, ${title}, muestra un enfoque centrado en la experiencia de marca y producto, alineando diseño, narrativa y utilidad para crear un impacto medible.`
 }
 
 function defaultAction(cat: string): string {
   const base =
-    "We defined the strategic narrative, simplified the interface language and produced key hero visuals to communicate value clearly across channels."
-  return base + " Focus area: " + cat.toUpperCase() + "."
+    "Definimos la narrativa estratégica, simplificamos el lenguaje de la interfaz y produjimos visuales clave para comunicar el valor de manera clara a través de todos los canales."
+  return base + " Área de enfoque: " + cat.toUpperCase() + "."
 }
 
 

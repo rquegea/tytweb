@@ -2,19 +2,20 @@ import Image from "next/image"
 import type { Metadata } from "next"
 import { projectsData, slugify } from "@/lib/projects"
 
-type Props = { params: { slug: string } }
+type Props = { params: Promise<{ slug: string }> }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return projectsData.map((p) => ({ slug: slugify(p.title) }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trucoytrufa.es"
-  const project = projectsData.find((p) => slugify(p.title) === params.slug)
+  const { slug } = await params
+  const project = projectsData.find((p) => slugify(p.title) === slug)
   if (!project) {
     return {
       title: "Proyecto no encontrado",
-      alternates: { canonical: `${base}/work/${params.slug}` },
+      alternates: { canonical: `${base}/work/${slug}` },
       robots: { index: false, follow: false },
     }
   }
@@ -39,8 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = projectsData.find((p) => slugify(p.title) === params.slug)
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params
+  const project = projectsData.find((p) => slugify(p.title) === slug)
   if (!project) return null
 
   return (

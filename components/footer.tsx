@@ -6,7 +6,7 @@ export function Footer() {
           {/* Social Links - Left */}
           <div className="md:col-span-2 flex flex-col gap-3">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/trucoytrufa/?hl=es"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#0F0E0E] hover:opacity-70 transition-opacity uppercase body-text"
@@ -14,7 +14,7 @@ export function Footer() {
               INSTAGRAM
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/truco-y-trufa/?originalSubdomain=es"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#0F0E0E] hover:opacity-70 transition-opacity uppercase body-text"
@@ -22,12 +22,20 @@ export function Footer() {
               LINKEDIN
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.facebook.com/trucoytrufa/?locale=es_ES"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#0F0E0E] hover:opacity-70 transition-opacity uppercase body-text"
             >
-              TWITTER
+              FACEBOOK
+            </a>
+            <a
+              href="https://areacliente.trucoytrufa.es/login/?redirect_to=https%3A%2F%2Fareacliente.trucoytrufa.es%2F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0F0E0E] hover:opacity-70 transition-opacity uppercase body-text"
+            >
+              ÁREA CLIENTES
             </a>
           </div>
 

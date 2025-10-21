@@ -46,7 +46,7 @@ export const projectsData: ProjectMeta[] = [
     title: "Moët & Chandon — Escaparate El Corte Inglés Goya",
     category: "t&trade",
     subtitle:
-      "Moët & Chandon  confía en nosotros para dar una visibilidad y notoriedad  al producto acorde al público objetivo, ajustando la visibilidad  a los requerimientos en las instalaciones del establecimiento escaparate de El Corte Inglés de Goya en Madrid. Este escaparate tenía sus dificultades para poder realizar una implementación adecuada ya que el tanto el  espacio para acceder como para trabajar era muy limitado y los elementos a implementar eran muy complejos, pese a ello se consiguió  un excelente posicionamiento del producto en la tienda  impactando al consumidor.",
+      "Moët & Chandon confía en nosotros para dar una visibilidad y notoriedad al producto acorde al público objetivo, ajustando la visibilidad a los requerimientos en las instalaciones del establecimiento escaparate de El Corte Inglés de Goya en Madrid. Este escaparate tenía sus dificultades para poder realizar una implementación adecuada ya que tanto el espacio para acceder como para trabajar era muy limitado y los elementos a implementar eran muy complejos, pese a ello se consiguió un excelente posicionamiento del producto en la tienda impactando al consumidor.",
     action:
       "El proyecto se inició con el análisis de las necesidades del cliente aplicando los manuales de estilo de la marca al espacio destinado a la exposición. Se propuso un  diseño disruptivo, adaptado a las dimensiones del espacio, creando un gran impacto en el consumidor. Para ello se llevó a cabo la proyección de los diversos elementos de la campaña dentro del espacio mediante renders 3D hiperrealista. De esta forma la marca era visualmente consciente de todos los detalles de la implementación desde el principio. Una herramienta visual que ayuda al cliente a estudiar con certeza todos los elementos tanto de manera global como apreciar el mínimo detalle de diseño. Pero T&T no sólo diseñó los elementos de la campaña si no que fue la encargada de la producción de todos los elementos, interiores y exteriores, como también su implementación.",
     coverImage: "/projects/t&trade/moet-escaparate-01.jpg",
@@ -64,9 +64,9 @@ export const projectsData: ProjectMeta[] = [
     title: "Lotus — Evento de Teambuilding",
     category: "t&events",
     subtitle:
-      "El cliente Lotus nos pidió organizar un  evento de teambuilding para fomentar la cohesión del equipo, la creatividad y el compromiso del equipo. Objetivos del Evento Fomentar la colaboración y la comunicación entre los empleados. Reforzar los valores y la misión de la marca Lotus. Estimular la creatividad y la innovación. Crear un ambiente positivo y motivador.",
+      "El cliente Lotus, del cual somos la agencia oficial de sus convenciones, nos pidió organizar un evento de teambuilding para fomentar la cohesión del equipo, la creatividad y el compromiso del equipo. Objetivos del Evento: Fomentar la colaboración y la comunicación entre los empleados. Reforzar los valores y la misión de la marca Lotus. Estimular la creatividad y la innovación. Crear un ambiente positivo y motivador.",
     action:
-      "Demostramos  una vez más nuestra capacidad para crear soluciones efectivas y originales para nuestros clientes, adaptándonos a sus necesidades y ofreciendo un servicio integral y personalizado.",
+      "Demostramos una vez más nuestra capacidad para crear soluciones efectivas y originales para nuestros clientes, adaptándonos a sus necesidades y ofreciendo un servicio integral y personalizado.",
     coverImage: "/projects/t&events/lotus-campana-01.jpg",
     images: [
       "/projects/t&events/lotus-campana-02.jpg",

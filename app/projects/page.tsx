@@ -1,6 +1,33 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CATEGORIES, getProjectsByCategory, projectsData } from "@/lib/projects"
+
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trucoytrufa.es"
+
+export const metadata: Metadata = {
+  title: "Proyectos · Portfolio de Marketing y Eventos",
+  description:
+    "Explora nuestro portfolio de proyectos: trade marketing, eventos corporativos, campañas digitales y activaciones para marcas de gran consumo. Casos de éxito en Madrid y España.",
+  alternates: { canonical: `${base}/projects` },
+  openGraph: {
+    type: "website",
+    url: `${base}/projects`,
+    title: "Proyectos · Truco y Trufa",
+    description:
+      "Portfolio de proyectos de trade marketing, eventos y campañas digitales para marcas de gran consumo.",
+    images: [
+      { url: `${base}/logotytweb.png`, width: 1200, height: 630, alt: "Truco y Trufa - Proyectos" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Proyectos · Truco y Trufa",
+    description:
+      "Portfolio de proyectos de trade marketing, eventos y campañas digitales.",
+    images: [`${base}/logotytweb.png`],
+  },
+}
 
 export default function ProjectsIndexPage() {
   const TITLE_OVERRIDES: Record<string, string> = {
